@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naisya Yuen - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="background-container">
+        <div class="bubbles-container" id="bubblesContainer"></div>
+
+        <!-- Seaweed -->
+        <div class="seaweed-container">
+            <div class="seaweed seaweed-1"></div>
+            <div class="seaweed seaweed-2"></div>
+            <div class="seaweed seaweed-3"></div>
+            <div class="seaweed seaweed-4"></div>
+            <div class="seaweed seaweed-5"></div>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <header class="header">
+        <a href="#home" class="logo">535240<span>187</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, It's <span>Naisya Yuen Ra'af</span></h1>
+            <h3 class="text-animation">I am a <span></span></h3>
+            <p>A passionate UI/UX Designer focused on bridging the gap between users and technology. As an Informatics Engineering student, I combine design empathy with the logic of code to create interfaces that are both beautiful and buildable.</p>
+
+            <div class="social-icons">
+                <a href="https://instagram.com/naisyayuen"><i class='bx bxl-instagram'></i></a>
+                <a href="https://linkedin.com/in/naisyayuenr"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/itsyuenai"><i class='bx bxl-github'></i></a>
+            </div>
+
+            <div class="btn-group">
+                <a href="CV .pdf" class="btn">
+                    <i class='bx bx-download'></i> Download CV
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class='bx bx-send'></i> Let's Talk
+                </a>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <div class="img-container">
+                <img src="images.jpg" alt="Profile">
+                <div class="img-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <div class="skills-container">
+            <div class="skill-box" data-skill="95">
+                <div class="skill-icon">
+                    <i class='bx bxl-html5'></i>
+                </div>
+                <h3>HTML</h3>
+            </div>
+
+            <div class="skill-box" data-skill="90">
+                <div class="skill-icon">
+                    <i class='bx bxl-css3'></i>
+                </div>
+                <h3>CSS</h3>
+            </div>
+
+            <div class="skill-box" data-skill="85">
+                <div class="skill-icon">
+                    <i class='bx bxl-javascript'></i>
+                </div>
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skill-box" data-skill="80">
+                <div class="skill-icon">
+                    <i class='bx bxl-react'></i>
+                </div>
+                <h3>React</h3>
+            </div>
+
+            <div class="skill-box" data-skill="88">
+                <div class="skill-icon">
+                    <i class='bx bxl-nodejs'></i>
+                </div>
+                <h3>Node.js</h3>
+            </div>
+
+            <div class="skill-box" data-skill="82">
+                <div class="skill-icon">
+                    <i class='bx bxl-python'></i>
+                </div>
+                <h3>Python</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Services</span></h2>
+        <div class="services-container">
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class='bx bx-code-alt'></i>
+                </div>
+                <div class="service-info">
+                    <h4>Web Development</h4>
+                    <p>Creating responsive and interactive user experiences focused on performance, by combining a strong foundation in HTML, CSS, & JS with modern technologies like React, Vue.js, and Node.js.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class='bx bx-palette'></i>
+                </div>
+                <div class="service-info">
+                    <h4>UI/UX Design</h4>
+                    <p>Designing intuitive and beautiful user interfaces with attention to user experience, accessibility, and modern design principles.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class='bx bx-server'></i>
+                </div>
+                <div class="service-info">
+                    <h4>Backend Solutions</h4>
+                    <p>Building robust server-side applications, APIs, and database solutions to power your web applications with scalability in mind.</p>
+                </div>
+            </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">My <span>Portfolio</span></h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card" data-category="web">
+                <div class="card-image">
+                    <img src="pjawa.png" alt="Website">
+                    <div class="card-overlay">
+                        <div class="card-actions">
+                            <a href="https://itsyuenai.github.io" class="action-btn"><i class='bx bx-show'></i></a>
+                            <a href="https://github.com/itsyuenai/itsyuenai.github.io" class="action-btn"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-category">Web Application</span>
+                    <h3>Java Culture</h3>
+                    <p>An interactive front-end website showcasing the richness and beauty of Javanese culture. Built entirely with HTML, CSS, and JavaScript to create a responsive and engaging visual experience.</p>
+                    <div class="card-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Javascript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="web">
+                <div class="card-image">
+                    <img src="id watch.png" alt="Toko Jam">
+                    <div class="card-overlay">
+                        <div class="card-actions">
+                            <a href="https://github.com/itsyuenai/TOKOJAM" class="action-btn"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-category">E-commerce</span>
+                    <h3>Id Watch</h3>
+                    <p>A functional e-commerce prototype for a watch store, featuring a product catalog and a checkout process. Built with a full-stack approach using PHP, the Blade templating engine, and JavaScript.</p>
+                    <div class="card-tech">
+                        <span>PHP</span>
+                        <span>Blade</span>
+                        <span>Javascript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="web">
+                <div class="card-image">
+                    <img src="insurance.png" alt="Insurance Web">
+                    <div class="card-overlay">
+                        <div class="card-actions">
+                            <a href="https://github.com/itsyuenai/NaInsurance" class="action-btn"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-category">Website</span>
+                    <h3>Insurance</h3>
+                    <p>This project is a static website for an insurance company, showcasing various products offered. The main focus was on a clear user interface (UI) and an intuitive user experience (UX). Minor interactivity, such as smooth scrolling
+                        and simple form validation, was implemented using JavaScript.</p>
+                    <div class="card-tech">
+                        <span>Javascript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Get In <span>Touch</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class='bx bx-phone'></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Phone</h4>
+                        <p>+62 821 2263 7844</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class='bx bx-envelope'></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Email</h4>
+                        <p>naisyayr09@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class='bx bx-map'></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Location</h4>
+                        <p>Bogor, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="input-group">
+                    <div class="input-box">
+                        <input type="text" placeholder="Full Name" required>
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Email Address" required>
+                        <i class='bx bx-envelope'></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <input type="tel" placeholder="Phone Number">
+                        <i class='bx bx-phone'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="Subject" required>
+                        <i class='bx bx-message-square-detail'></i>
+                    </div>
+                </div>
+
+                <div class="input-box full-width">
+                    <textarea placeholder="Your Message" rows="6" required></textarea>
+                    <i class='bx bx-message'></i>
+                </div>
+
+                <button type="submit" class="btn">
+                    <i class='bx bx-send'></i>
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://instagram.com/naisyayuen"><i class='bx bxl-instagram'></i></a>
+                <a href="https://linkedin.com/in/naisyayuenr"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/itsyuenai"><i class='bx bxl-github'></i></a>
+                <a href="https://mailto:naisyayr09@gmail.com"><i class='bx bx-envelope'></i></a>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <p class="copyright"> &copy;2025 Naisya Yuen. All rights reserved. Built with passion and creativity.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
