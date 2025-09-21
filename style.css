@@ -46,9 +46,6 @@ body {
     overflow: hidden;
 }
 
-
-/* Floating Bubbles */
-
 .bubbles-container {
     position: absolute;
     width: 100%;
@@ -58,37 +55,63 @@ body {
 
 .bubble {
     position: absolute;
-    background: var(--bubble-color);
     border-radius: 50%;
-    opacity: 0.7;
-    animation: float-up linear infinite;
-    box-shadow: 0 0 10px rgba(109, 213, 237, 0.3);
+    opacity: 0;
+    animation: realistic-float linear infinite;
+    background: radial-gradient(ellipse at 30% 30%, rgba(255, 255, 255, 0.8) 0%, rgba(109, 213, 237, 0.6) 30%, rgba(109, 213, 237, 0.3) 70%, rgba(109, 213, 237, 0.1) 100%);
+    box-shadow: 0 0 10px rgba(109, 213, 237, 0.4), inset -2px -2px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bubble::before {
     content: '';
     position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 20%;
-    height: 20%;
-    background: rgba(255, 255, 255, 0.3);
+    top: 15%;
+    left: 20%;
+    width: 25%;
+    height: 25%;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
     border-radius: 50%;
+    transform: rotate(-45deg);
 }
 
-@keyframes float-up {
+.bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: 25%;
+    width: 15%;
+    height: 15%;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+@keyframes realistic-float {
     0% {
-        transform: translateY(100vh) rotate(0deg);
+        transform: translateY(100vh) translateX(0px) scale(0) rotate(0deg);
         opacity: 0;
     }
-    10% {
-        opacity: 0.7;
+    5% {
+        opacity: 0.8;
+        transform: translateY(95vh) translateX(0px) scale(1) rotate(0deg);
     }
-    90% {
-        opacity: 0.7;
+    25% {
+        transform: translateY(75vh) translateX(20px) scale(1.1) rotate(90deg);
+    }
+    50% {
+        transform: translateY(50vh) translateX(-15px) scale(1) rotate(180deg);
+    }
+    75% {
+        transform: translateY(25vh) translateX(10px) scale(0.9) rotate(270deg);
+    }
+    95% {
+        opacity: 0.8;
+        transform: translateY(5vh) translateX(-5px) scale(0.8) rotate(350deg);
     }
     100% {
-        transform: translateY(-100px) rotate(360deg);
+        transform: translateY(-5vh) translateX(0px) scale(0) rotate(360deg);
         opacity: 0;
     }
 }
@@ -634,55 +657,150 @@ section {
     color: var(--text-color);
 }
 
-.skill-progress {
-    width: 100%;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    margin: 1.5rem 0;
-    overflow: hidden;
-}
 
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--main-color), var(--accent-color));
-    border-radius: 5px;
-    width: 0;
-    transition: width 2s ease-in-out;
+/* Education Section */
+
+.education {
+    background: var(--bg-color);
     position: relative;
 }
 
-.progress-bar::after {
+.education::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: shimmer 2s infinite;
+    opacity: 0.3;
 }
 
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
+.education-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
-.skill-percentage {
-    font-size: 1.8rem;
+.education-item {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    border: 1px solid rgba(109, 213, 237, 0.2);
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(109, 213, 237, 0.1), transparent);
+    transition: 0.5s ease;
+}
+
+.education-item:hover::before {
+    left: 100%;
+}
+
+.education-item:hover {
+    border-color: var(--main-color);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(109, 213, 237, 0.2);
+}
+
+.education-content {
+    flex: 1;
+}
+
+.education-year {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(45deg, var(--main-color), var(--accent-color));
+    color: var(--bg-color);
+    border-radius: 2rem;
+    font-size: 1.4rem;
     font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.education-content h3 {
+    font-size: 2.5rem;
     color: var(--main-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.education-content h4 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.education-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.education-achievements {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.education-achievements span {
+    padding: 0.5rem 1.2rem;
+    background: rgba(192, 255, 238, 0.1);
+    color: var(--accent-color);
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    border: 1px solid rgba(192, 255, 238, 0.2);
+    transition: 0.3s ease;
+}
+
+.education-achievements span:hover {
+    background: rgba(192, 255, 238, 0.2);
+    transform: translateY(-2px);
+}
+
+.education-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, var(--main-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: 0.3s ease;
+}
+
+.education-item:hover .education-icon {
+    transform: rotateY(360deg);
+}
+
+.education-icon i {
+    font-size: 5rem;
+    color: var(--bg-color);
 }
 
 
 /* Services Section */
 
 .services {
-    background: var(--bg-color);
+    background: var(--second-bg-color);
 }
 
 .services-container {
@@ -766,50 +884,7 @@ section {
 /* Portfolio Section */
 
 .portfolio {
-    background: var(--second-bg-color);
-}
-
-.portfolio-filter {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 4rem;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 1rem 2rem;
-    background: transparent;
-    border: 2px solid var(--main-color);
-    border-radius: 2rem;
-    color: var(--main-color);
-    font-size: 1.6rem;
-    cursor: pointer;
-    transition: 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.filter-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--main-color);
-    transition: 0.3s ease;
-    z-index: -1;
-}
-
-.filter-btn:hover::before,
-.filter-btn.active::before {
-    left: 0;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    color: var(--bg-color);
+    background: var(--bg-color);
 }
 
 .portfolio-grid {
@@ -957,7 +1032,7 @@ section {
 /* Contact Section */
 
 .contact {
-    background: var(--bg-color);
+    background: var(--second-bg-color);
 }
 
 .contact-container {
@@ -1084,7 +1159,7 @@ section {
 /* Footer */
 
 .footer {
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     padding: 3rem 9%;
     text-align: center;
     border-top: 1px solid rgba(109, 213, 237, 0.2);
@@ -1146,9 +1221,6 @@ section {
     opacity: 0.8;
 }
 
-
-/* Scroll to Top Button */
-
 .scroll-top {
     position: fixed;
     bottom: 2rem;
@@ -1180,7 +1252,7 @@ section {
 }
 
 
-/* Animasi */
+/* Animations */
 
 @keyframes slideInLeft {
     0% {
@@ -1216,7 +1288,7 @@ section {
 }
 
 
-/* Responsive Design */
+/* Responsive */
 
 @media (max-width: 1200px) {
     html {
@@ -1225,6 +1297,11 @@ section {
     .contact-container {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    .education-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
     }
 }
 
@@ -1240,6 +1317,9 @@ section {
     }
     .portfolio-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .navbar a {
+        margin-left: 2rem;
     }
 }
 
@@ -1291,6 +1371,9 @@ section {
     .footer-links {
         gap: 2rem;
     }
+    .education-item {
+        padding: 2rem;
+    }
 }
 
 @media (max-width: 520px) {
@@ -1312,6 +1395,9 @@ section {
         flex-direction: column;
     }
     .social-icons {
+        justify-content: center;
+    }
+    .education-achievements {
         justify-content: center;
     }
 }
